@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Get</title>
+</head>
+<body>
+    <button id="btn">Get LOcation</button>
+        <h1 class="location">
+            
+        </h1>
+
+        <script>
+            let btn = document.querySelector('#btn');
+            let locationn = document.querySelector('.location');
+
+            btn.addEventListener('click', ()=>{
+              navigator.geolocation.getCurrentPosition(showPositon);      
+            });
+            
+            function showPositon(position){
+                locationn.innerHTML = `
+                Latitude: ${position.coords.latitude} <br/>
+                Longitude:${position.coords.longitude}
+                
+                `;
+            }
+        </script>
+</body>
+</html>

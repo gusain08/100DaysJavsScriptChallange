@@ -1,21 +1,24 @@
 let btn = document.querySelector('.btn');
-let result = document.querySelector('.result');
+
+let text =  document.querySelector('.result');
 
 
-btn.addEventListener('click', palindromeCheck);
+btn.addEventListener('click',checkpandrome);
 
-function palindromeCheck(){
+function checkpandrome(){
    let word = document.querySelector('.input-text').value;
-   let len =  word.length;
-   
-   let start = word.substring(0,  Math.floor(len/2));
-   let end =  word.substring(len - Math.floor(len/2));
+   let len  = word.length;
+   let start =  word.substring(0, Math.floor(len/2)).toLowerCase();
+   console.log(start);
+   let end  =    word.substring(len - Math.floor(len/2)).toLowerCase();
+   console.log(end);
+   let revrse =  [...end].reverse().join("");
 
-   let rev = [...end].reverse().join("");
-
-   if(start == rev){
-      result.innerHTML = `${word.toUpperCase()} is palindrome `;
-   }else{
-      result.innerHTML = `${word.toUpperCase()} is not  palindrome `;
+   if(start == revrse){
+      text.innerHTML = `${word} is palindrome`;
    }
+else{
+   text.innerHTML = `${word} is not palindrome`;
+}
+
 }
