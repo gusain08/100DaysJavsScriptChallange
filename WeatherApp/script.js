@@ -47,6 +47,7 @@ function displayData(result){
         const iconurl  =  "https://openweathermap.org/img/w/"
         weatherIcon.src = iconurl + result.weather[0].icon + ".png";
     
+        search.value="";
     }
     console.log(result);    
 }
